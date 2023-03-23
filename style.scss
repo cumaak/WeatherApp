@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+%container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 35rem;
+    background: white;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    transform: 0.6s ease-out;
+    padding: 2.5rem 3rem;
+}
+%weather-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+%description{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: black;
+    text-transform: capitalize;
+}
+%temperature{
+    font-size: 5rem;
+    font-weight: 800;
+    color: black;
+}
+%details{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: 0;
+}
+html{
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+}
+body{
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    .container{
+        @extend %container;
+        position: relative;
+        height: 10rem;
+        margin-top: 3rem;
+        transition: height 1s;
+        .search-box{
+            width: 100%;
+            height: -moz-min-content;
+            height: min-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            i{
+                position: absolute;
+                color: black;
+                font-size: 2.8rem;
+            }
+            input{
+                color: black;
+                width: 80%;
+                font-size: 2.4rem;
+                font-weight: 500;
+                text-transform: capitalize;
+                padding-left: 3rem;
+                &::placeholder{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #06283d;
+                    text-transform: capitalize;
+                }
+            }
+            button{
+                cursor: pointer;
+                height: 5rem;
+                width: 5rem;
+                color: black;
+                background-color: #dff6ff;
+                border-radius: 5rem;
+                font-size: 2.2rem;
+                transition: 0.4 ease;
+                &:hover{
+                    color: #dff6ff;
+                    background: black;
+                }
+            }
+        }
+        .error{
+            width: 100%;
+            text-align: center;
+            margin-top: 5rem;
+            scale: 0;
+            opacity: 0;
+            display: none;
+            img{
+                width: 70%;
+            }
+            p{
+                color: black;
+                font-size: 2.2rem;
+                font-weight: 500;
+                margin-top: 1.2rem;
+            }
+        }
+        .weather-box{
+            @extend %weather-box;
+            scale: 0;
+            opacity: 0;
+            
+            img{
+                width: 60%;
+            }
+            .description{
+                @extend %description;
+            }
+            .temperature{
+                @extend %temperature;
+            }
+        }
+        .details{
+            @extend %details;
+            scale: 0;
+            opacity: 0;
+            .humidity{
+                font-size: 2rem;
+                .title{
+                    text-align: center;
+                }
+                .text{
+                    span{
+                        margin-left: 0.4rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .wind{
+                font-size: 2rem;
+                .title{
+                    text-align: center;
+                }
+                .text{
+                    span{
+                        margin-left: 0.4rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .fadeIn {
+            animation: 0.5s fadeIn forwards;
+            animation-delay: 0.5s;
+          }
+    }
+    .other-cities{
+        width: 100%;
+        position: absolute;
+        top: 20rem;
+        display: flex;
+        justify-content: space-evenly;
+        transition: top 1s;
+        .other-container{
+            @extend %container;
+            height: 55rem;
+            margin-bottom: 3rem;
+            .other-city-name{
+                display: flex;
+                i{
+                    font-size: 2.8rem;
+                    margin-top: 0.2rem;
+                }
+                h5{
+                    font-size: 2.4rem;
+                    font-weight: 500;
+                    padding-left: 0.8rem;
+                    text-transform: capitalize;
+                }
+            }
+            .other-weather-box{
+                @extend %weather-box;
+
+                img{
+                    width: 60%;
+                }
+                .other-description{
+                    @extend %description;
+                }
+                .other-temperature{
+                    @extend %temperature;
+                }
+            }
+            .other-details{
+                @extend %details;
+                .other-humidity{
+                    font-size: 2rem;
+                    .title{
+                        text-align: center;
+                    }
+                    .text{
+                        span{
+                            margin-left: 0.4rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .other-wind{
+                    font-size: 2rem;
+                    .title{
+                        text-align: center;
+                    }
+                    .text{
+                        span{
+                            margin-left: 0.4rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes fadeIn {
+    to {
+      scale: 1;
+      opacity: 1;
+    }
+}
+@media screen and (max-width:500px) {
+    html{
+        font-size: 8px;
+    }
+    body{
+        .other-cities{
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+}
