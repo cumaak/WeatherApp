@@ -190,3 +190,5 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cities[0]}&units=metr
 })
 .catch((error)=> {console.log(error);});
 
+cityNames[0] = "beni bıragma neclağğğ";
+
