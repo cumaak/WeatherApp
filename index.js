@@ -33,7 +33,7 @@ search.addEventListener('click', () => {
             weatherDetails.style.display = 'none';
             error404.style.display = 'block';
             error404.classList.add('fadeIn');
-            otherCities.style.top = '40rem';
+            otherCities.style.top = '45rem';
             return;
         }
         error404.style.display = 'none';
@@ -79,7 +79,7 @@ search.addEventListener('click', () => {
         weatherBox.classList.add('fadeIn');
         weatherDetails.classList.add('fadeIn');
         container.style.height = '55rem';
-        otherCities.style.top = '60rem';
+        otherCities.style.top = '65rem';
     });
 });
 
