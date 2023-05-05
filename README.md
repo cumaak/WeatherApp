@@ -1,9 +1,9 @@
 # WeatherApp
-Weather app with Javascript and openweather API
+Weather app with Javascript and OpenWeatherMap API
 
 This weather app was made with javascript, scss and html.
 APIs were pulled from openweathermap.org with fetch method.
-Resposive design was applied.
+Responsive design was applied.
 
 Screenshots
 
